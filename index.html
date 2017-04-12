@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+<head>
+    <title>Text Runner js</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="example1">
+            <h1>Example counting up with an interval of 100 miliseconds</h1>
+            <span id="number"></span>
+        </div>
+        <div class="example2">
+            <h1>Example counting down with an interval of 10 miliseconds</h1>
+            <span id="number2"></span>
+        </div>
+    <div>
+<script src="numberRun.js"></script>
+<script>
+
+var run = new numberRun('number');
+    run.setStart(0);
+    run.setFinish(2350)
+    run.setInterval(100);
+    run.count();
+
+var run2 = new numberRun('number2');
+    run2.setStart(600);
+    run2.setFinish(50)
+    run2.setInterval(10);
+    run2.count()
+
+
+</script>
+</body>
+</html>

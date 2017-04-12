@@ -76,9 +76,8 @@ numberRun.prototype.count = function () {
     if ( this.finish > this.start ) {
         this.countUp();
     } else {
-        this.countDown();
+       this.countDown(this.start, this.finish);
     }
-
 };
 
 /*
@@ -87,21 +86,25 @@ numberRun.prototype.count = function () {
 numberRun.prototype.countUp = function () {
     while ( this.start <= this.finish ) {
         this.counter(this.start, this.start);
-    this.start += 1;
+        this.start += 1;
     }
+    return 1;
 };
 
 /*
 @method countDown - count down from finish to end
 */
-numberRun.prototype.countDown = function () {
+numberRun.prototype.countDown = function (start, finish) {
     // num is used to ensure the countdown !important
+    
     var num = this.finish;
     while ( this.finish <= this.start ) {
         this.counter(this.start, num);
-    this.start--;
-    num++;
+        this.start--;
+        num++;
+
     }
+
 };
 
 /*
@@ -116,4 +119,5 @@ numberRun.prototype.counter = function ( start, num ) {
     setTimeout(function() {
         document.getElementById(selector).innerHTML = "Number: " + start;
     }, num * interval);
+
 };
